@@ -1,11 +1,10 @@
 package com.example.demo;
 
-import java.util.Optional;
 
 import org.springframework.data.mongodb.repository.MongoRepository;
+import org.springframework.stereotype.Repository;
 
-public interface BlogRepo extends MongoRepository<Blog, String> {
-    
-    public Optional<Blog> findByTitle(String title);       
+@Repository
+public interface BlogRepo extends MongoRepository<Blog, String> {      
 
 }

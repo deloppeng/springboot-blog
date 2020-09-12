@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta http-equiv="Content-Type" content="application/json; charset=UTF-8" /> 
+    <title th:text="Hello"></title>
+    <link href="/css/main.css" rel="stylesheet">
+</head>
+<body>
+    <h2 class="hello-title" th:text="'Hello, ' + ${name} + '!'"></h2>
+<div id=form-main>
+	<div id="form-div">
+	<!-- <p th:text=" ${data}"></p> -->
+ <table>
+    <thead>
+        <tr>
+            <th> Title </th>
+            <th> Content </th>
+        </tr>
+    </thead>
+    <tbody>
+         <tr th:each="data1 : ${data}"> 
+        
+            <td><span th:text="${data1.title}"> Title </span></td>
+            <td><span th:text="${data1.content}"> Content </span></td>
+        </tr>
+    </tbody>
+</table>
+	</div>
+</div>
+<br><br>
+
+
+<div id="form-main">
+  <div id="form-div">
+    <form class="form" action="#" th:action="@{/api/blog/add}" th:object="${blog}" method="post">
+      
+      <p class="text">
+      	<h4>Title:</h4>
+        <input class="feedback-input" type="text" th:field="*{title}" placeholder="title"/>
+      </p>
+      
+      <p class="text">
+      	<h3>Content:</h3>
+        <textarea class="feedback-input" th:field="*{content}" placeholder="content"></textarea>
+      </p>
+      
+      
+      <div class="submit">
+        <input type="submit" value="Submit" id="button-blue"/>
+        <div class="ease"></div>
+      </div>
+    </form>
+
+  </div>
+</div> 
+    
+</body>
+</html>
