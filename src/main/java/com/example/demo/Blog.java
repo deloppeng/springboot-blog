@@ -8,6 +8,7 @@ public class Blog {
 	public String title;
 	public String content;
 	private String createTime;
+	private String userName;
 	  
 	public String getId() {
 		return id; 
@@ -36,4 +37,13 @@ public class Blog {
     public void setCreateTime(String createTime) {
         this.createTime = createTime;
     }
+    
+	public String getUserName() {
+		return userName;
+	}
+	public void setUserName(String userName) {
+		this.userName = userName;
+	}
+	
+    
 }

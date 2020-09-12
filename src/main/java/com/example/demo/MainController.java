@@ -13,20 +13,30 @@ public class MainController {
 
 	@Autowired
     private BlogRepo blogRepo;
+	
+	public Blog blog = new Blog();
     
 	@GetMapping("/{name}") 
 	public String blogForm(Model model, @PathVariable("name") String name) {
 		model.addAttribute("name", name);
 		
 		//get all data in db
-		List<Blog> aaa = blogRepo.findAll();
+		List<Blog> data = blogRepo.findByuserName(name);
 		
-		model.addAttribute("data", aaa);
-		model.addAttribute("blog", new Blog());
+		model.addAttribute("data", data);
 		
+		blog.setUserName(name);
+		model.addAttribute("blog", blog);
 		return "blogForm"; 
 	} 
 
+	public Blog getBlog() {
+		return blog; 
+	} 
+	public void setBlog(Blog blog) {
+		this.blog = blog; 
+	} 
+	
 	
 	
 	
