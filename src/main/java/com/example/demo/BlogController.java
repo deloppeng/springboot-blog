@@ -25,7 +25,7 @@ public class BlogController {
      * 查詢全部
      */
 	@GetMapping("/all")
-    public List<Blog> getAllCustomers() {
+    public List<Blog> getAllData() {
         return blogRepo.findAll();
     }
 	

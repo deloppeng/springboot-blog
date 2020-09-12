@@ -6,22 +6,23 @@
     <link href="/css/main.css" rel="stylesheet">
 </head>
 <body>
-    <h2 class="hello-title" th:text="'Hello, ' + ${name} + '!'"></h2>
+	<h2 class="hello-title" th:text="'多人共用記事本'"></h2>
+    <h2 class="hello-title" th:text="'歡迎, ' + ${name} + '!'"></h2>
 <div id=form-main>
 	<div id="form-div">
 	<!-- <p th:text=" ${data}"></p> -->
  <table>
     <thead>
         <tr>
-            <th> Title </th>
-            <th> Content </th>
+            <th> 標題 </th>
+            <th> 內容 </th>
         </tr>
     </thead>
     <tbody>
          <tr th:each="data1 : ${data}"> 
         
-            <td><span th:text="${data1.title}"> Title </span></td>
-            <td><span th:text="${data1.content}"> Content </span></td>
+            <td><span th:text="${data1.title}"></span></td>
+            <td><span th:text="${data1.content}"></span></td>
         </tr>
     </tbody>
 </table>
