@@ -3,7 +3,6 @@
 - 主框架：Spring boot 2.1.16.RELEASE
 - Maven version: Maven 4.0.0
 - Java version: 1.8
-- 介面：thymeleaf
 * MongoDB server version: 4.2.1
     * DB: testblog
     * Table: blog
